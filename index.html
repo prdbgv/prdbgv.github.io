@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="CSS\styles.css">
+    <script>
+        // Función para resetear el LocalStorage
+        function resetLocalStorage() {
+            localStorage.removeItem('selectedPlayer');
+            localStorage.removeItem('totalScore');
+            localStorage.removeItem('completed');
+            localStorage.removeItem('selectedPlayerDay');
+            localStorage.removeItem('Log');
+            console.log("Logrado");
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <a href="farmear.html" class="menu-button">Modo Farmeo</a>
+        <a href="modo_random.html" class="menu-button">Modo Random</a>
+        <a href="modo_historia.html" class="menu-button">Modo Historia</a>
+        <a href="reto_del_dia.html" class="menu-button">Reto del Día</a>
+        <a href="tienda.html" class="menu-button">Tienda</a>
+        <a href="log.html" class="menu-button">Log</a>
+        <!-- Nuevo botón para resetear LocalStorage -->
+        <a href="javascript:void(0);" class="menu-button" onclick="resetLocalStorage()">Resetear Datos</a>
+    </div>
+</body>
+</html>

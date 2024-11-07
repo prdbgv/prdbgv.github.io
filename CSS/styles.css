@@ -1,0 +1,103 @@
+/* Fondo general de la página */
+body {
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor del menú */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo de los botones */
+.menu-button {
+    display: block;
+    width: 320px; /* Ancho de los botones */
+    padding: 20px; /* Espaciado adicional dentro de los botones */
+    text-align: center;
+    background-color: #D6DCE5; /* Color de fondo de los botones */
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto de hover para los botones */
+.menu-button:hover {
+    background-color: #C1C8D2; /* Color más oscuro al hacer hover */
+}
+
+/* Estilos para el botón de regreso */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #D6DCE5;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #C1C8D2;
+}
+
+/* Estilo de la tabla */
+.log-container {
+    overflow-x: auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#log-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo de la cabecera de la tabla */
+#log-table thead {
+    background-color: #D6DCE5;
+}
+
+#log-table th {
+    padding: 15px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 2px solid #C1C8D2;
+}
+
+/* Estilo de las filas y celdas */
+#log-table td {
+    padding: 12px 15px;
+    color: #555;
+    font-size: 15px;
+    border-bottom: 1px solid #E6E9ED;
+}
+
+/* Alternar color de fondo en filas */
+#log-table tbody tr:nth-child(even) {
+    background-color: #F9FAFB;
+}
+
+/* Hover en filas */
+#log-table tbody tr:hover {
+    background-color: #F0F3F5;
+}

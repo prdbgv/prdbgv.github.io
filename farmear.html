@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Tarjetas</title>
+    <link rel="stylesheet" href="CSS\farmear.css">
+</head>
+<body>
+    <a href="index.html" class="menu-button">← Volver al Menú Principal</a>
+    <div class="total-score">
+        <p><strong>Puntuación Total: <span id="total-score">0</span></strong></p>
+    </div>
+    <div class="game-container">
+        <div class="card" onclick="flipCard(0)">
+            <div class="card-inner" id="card0">
+                <div class="card-front">
+                    <p> Coste de Giro: 5 puntos</p>
+                </div>
+                <div class="card-back">
+                    <p id="player1-name"></p>
+                    <p id="player1-score"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="flipCard(1)">
+            <div class="card-inner" id="card1">
+                <div class="card-front">
+                    <p> Coste de Giro: 5 puntos</p>
+                </div>
+                <div class="card-back">
+                    <p id="player2-name"></p>
+                    <p id="player2-score"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <!-- Fila 1: Botones de Tick -->
+        <div class="row">
+            <button id="tick1" class="action-button green" onclick="applyAction('tick1')">✔</button>
+            <button id="tick2" class="action-button green" onclick="applyAction('tick2')">✔</button>
+        </div>
+        <!-- Fila 2: Botón de Reset -->
+        <div class="row">
+            <button id="reset" class="action-button red" onclick="applyAction('reset')">✖</button>
+        </div>
+    </div>
+    <script src="JS\farmear.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* Fondo general de la página */
+body {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Botón de menú en la esquina superior izquierda */
+.menu-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #D6DCE5;
+    color: #000;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Puntuación total en la esquina superior derecha en negrita */
+.total-score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Contenedor del juego */
+.game-container {
+    display: flex;
+    gap: 30px; /* Espacio entre tarjetas */
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+    pointer-events: none; /* Deshabilitar clic al estar girada */
+}
+
+/* Ocultar fondo blanco no deseado */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #000;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.card-front {
+    background-color: #C1C8D2;
+}
+
+.card-back {
+    background-color: #B0B8C1;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+/* Botones de acciones */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los botones */
+    align-items: center; /* Alinear los botones en el centro */
+    margin-top: 20px;
+}
+
+/* Cada fila tiene un layout horizontal */
+.row {
+    display: flex;
+    justify-content: space-between; /* Alinea los botones a los extremos */
+    gap: 30px; /* Espacio entre los botones */
+    width: 430px; /* Ancho total para los botones verdes (dos tarjetas de 200px cada una) */
+}
+
+/* Estilos para los botones */
+.action-button {
+    height: 60px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px; /* Ancho igual que cada tarjeta */
+}
+
+/* Colores de los botones */
+.green {
+    background-color: #4CAF50;
+    color: #3C8C40;
+}
+
+.red {
+    background-color: #F44336;
+    color: #C5382C;
+    width: 440px; /* Ancho combinado de las dos tarjetas y los botones verdes */
+}
+
+/* Mostrar los botones de tick cuando la tarjeta correspondiente esté girada */
+.card.flipped ~ .actions #tick1,
+.card.flipped ~ .actions #tick2 {
+    opacity: 1;
+}
+
+/* Mostrar el botón de reset solo cuando ambas tarjetas están giradas */
+.card.flipped ~ .actions #reset {
+    opacity: 1;
+}
